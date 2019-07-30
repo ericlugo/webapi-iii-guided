@@ -4,6 +4,10 @@ const Hubs = require('./hubs-model.js');
 const Messages = require('../messages/messages-model.js');
 
 const router = express.Router();
+router.use((req, res, next) => {
+  console.log(`hubs-router`);
+  next();
+});
 
 // this only runs if the url has /api/hubs in it
 router.get('/', async (req, res) => {
